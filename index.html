@@ -11,9 +11,17 @@
     <title>Document</title>
 </head>
 <body>
-
+<!-- Piccolo snack, in preparazione al todo list.
+Prepariamo un array in data che rappresenta una lista di cose da fare (un array di stringhe).
+Nell’html stampate per ciascun elemento, l’icona -->
 
     <div id="app">
+        <div v-for=" (toDo, index) in toDoLIst ">
+            <i 
+            class="far fa-check-circle"
+            :class="cross(index)"></i>
+            <span>{{indexPlus(index)}} {{toDo}}</span>
+        </div>
 
 
         
