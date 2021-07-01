@@ -14,10 +14,20 @@
 
 
     <div id="app">
-
-        <div v-for=" (toDo, index) in toDoLIst ">
-            <i class="far fa-check-circle" :class="cross(index)"></i>
-            <span>{{indexPlus(index)}} {{toDo}}</span>
+        <div class="container">
+            <div>
+                <input v-model="newTask" placeholder="Inserisci il nuovo Task">
+                <button @click="addTask">Aggiungi</button>
+            </div>
+    
+            <div>
+                <ul v-for="(toDo, index) in toDoLIst" >
+                    <li>
+                        <i :class="cross(index)"></i>
+                        <span>{{indexPlus(index)}} {{toDo}}</span>
+                    </li>
+                </ul>
+            </div>
         </div>
 
 
