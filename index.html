@@ -15,9 +15,13 @@
 
     <div id="app">
         <div class="container">
+
             <div>
-                <input v-model="newTask" placeholder="Inserisci il nuovo Task">
-                <button @click="addTask">Aggiungi</button>
+                <img src="" alt="">
+            </div>
+            <div>
+                <input id="newTaskElement" v-model="newTask" @keyup.enter="addTask" placeholder="Inserisci il nuovo Task">
+                <button @click="addTask" >Aggiungi</button>
             </div>
     
             <div>
@@ -28,6 +32,7 @@
                     </li>
                 </ul>
             </div>
+            
         </div>
 
 

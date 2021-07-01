@@ -6,8 +6,12 @@ const app =  new Vue({
     },
     created(){
 
-       
 
+
+    },
+    mounted(){
+        const  newTaskElement = document.getElementById("newTaskElement");
+        newTaskElement.focus();
     },
     methods:{
         indexPlus : function(index){
@@ -21,7 +25,8 @@ const app =  new Vue({
             }
         },
         addTask: function (){
-            this.toDoLIst.push(this.newTask)
+            this.toDoLIst.push(this.newTask);
+            this.newTask="";
         }
         
     }
