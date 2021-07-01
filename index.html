@@ -16,23 +16,28 @@
     <div id="app">
         <div class="container">
 
-            <div>
-                <img src="" alt="">
+            <div class="row justify-content-center logo-container ">
+                <div class="col-6 logo" >
+                    <img src="./img/logo.png" alt="">
+                </div>
             </div>
-            <div>
-                <input id="newTaskElement" v-model="newTask" @keyup.enter="addTask" placeholder="Inserisci il nuovo Task">
-                <button @click="addTask" >Aggiungi</button>
+
+            <div class="text-center input-container " >
+                <div>
+                    <input id="newTaskElement" v-model="newTask" @keyup.enter="addTask" placeholder="Nuovo Todo">
+                    <button @click="addTask" >Aggiungi</button>
+                </div>
             </div>
     
-            <div>
-                <ul v-for="(toDo, index) in toDoLIst" >
-                    <li>
-                        <i :class="cross(index)"></i>
-                        <span>{{indexPlus(index)}} {{toDo}}</span>
+            <div class="list-container">
+                <ul class="row justify-content-center" v-for="(toDo, index) in toDoLIst" >
+                    <li class="d-flex justify-content-between col-8">
+                        <span>{{indexPlus(index)}}) {{toDo}}</span>
+                        <i class="cross far fa-times-circle" @click="deleteTask(index)"></i>
                     </li>
                 </ul>
             </div>
-            
+
         </div>
 
 

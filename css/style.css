@@ -1,0 +1,10 @@
+/* LOGO - container */
+.logo img{
+   width: 100%;
+}
+
+/* LIST_CONTAINER */
+.list-container .cross{
+    font-size: 25px;
+
+}

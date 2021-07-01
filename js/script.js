@@ -1,7 +1,11 @@
 const app =  new Vue({
     el:"#app",
     data:{
-        toDoLIst:["comprare le mele", "andare dal fabbro", "comprare le cicche ",],
+        toDoLIst:[
+            "Comprare le mele",
+            "Andare dal fabbro mastro", 
+            "Comprare le cicche ",
+        ],
         newTask:"",
     },
     created(){
@@ -10,24 +14,25 @@ const app =  new Vue({
 
     },
     mounted(){
-        const  newTaskElement = document.getElementById("newTaskElement");
-        newTaskElement.focus();
+        this.autoFocus();
     },
     methods:{
         indexPlus : function(index){
             return index+1
         },
-        cross : function(index){
-            if(index % 2 ===0){
-                return "far fa-check-circle "
-            }else{
-                return "far fa-times-circle"
-            }
+        autoFocus:function(){
+            const  newTaskElement = document.getElementById("newTaskElement");
+            newTaskElement.focus(); 
         },
         addTask: function (){
             this.toDoLIst.push(this.newTask);
             this.newTask="";
-        }
+            this.autoFocus();
+        },
+        deleteTask: function (index){
+            this.toDoLIst.splice(index,1)
+            this.autoFocus();
+        },
         
     }
 }
