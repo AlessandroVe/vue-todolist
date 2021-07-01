@@ -33,6 +33,10 @@ const app =  new Vue({
             this.toDoLIst.splice(index,1)
             this.autoFocus();
         },
+        toUpper : function(toDo){
+             return  this.toDo[0].toUpperCase()+this.toDo.slice(1);
+            
+        },
         
     }
 }

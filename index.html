@@ -28,14 +28,16 @@
                     <button @click="addTask" >Aggiungi</button>
                 </div>
             </div>
-    
-            <div class="list-container">
-                <ul class="row justify-content-center" v-for="(toDo, index) in toDoLIst" >
-                    <li class="d-flex justify-content-between col-8">
-                        <span>{{indexPlus(index)}}) {{toDo}}</span>
-                        <i class="cross far fa-times-circle" @click="deleteTask(index)"></i>
-                    </li>
-                </ul>
+            
+            <div class="row justify-content-center"><!-- list-container -->
+                <div class="list-container col-8">
+                    <ul v-for="(toDo, index) in toDoLIst" >
+                        <li class="d-flex justify-content-between ">
+                            <span>{{indexPlus(index)}}) {{toDo}}</span>
+                            <i class="cross far fa-times-circle" @click="deleteTask(index)"></i>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
         </div>
